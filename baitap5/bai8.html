@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id = "output"></div>
+<button onclick="ok()">
+    Check
+</button>
+<script>
+    function ok() {
+        let point = [1,10,9,4,7,8,3,5,11]
+        console.log("Start====>" + point)
+        point.sort(function (a,b) {
+                return b-a
+            }
+        )
+        console.log("End=====>" + point)
+        document.getElementById('output').innerHTML = point
+    }
+</script>
+</body>
+</html>

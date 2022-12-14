@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Có hai mảng a và b, mỗi mảng có 10 phần tử</p>
+<p id="message"></p>
+<label for="userInput">Nhập số</label>
+<input type="text" id="userInput">
+<button id="myBtn" onclick="inputToArray()">Nhập vào mảng</button>
+<button onclick="concatTwoArray()">Nối hai mảng</button>
+<p id="result"></p>
+<script>
+  let arrayA = new Array(10);
+  let arrayB = new Array(10);
+  let arrayC;
+  let count = 0;
+  let input;
+  let result = document.getElementById("result");
+  function inputToArray(){
+    input = document.getElementById("userInput");
+    if(count < 10){
+      arrayA[count] = input.value;
+      count++;
+      input.value = "";
+      result.innerHTML = "Nhập số vào mảng a";
+    } else if (count < 20) {
+      arrayB[count-10] = input.value;
+      count++;
+      input.value = "";
+      result.innerHTML = "Nhập số vào mảng b";
+    } else result.innerHTML = "2 mảng a & b đã đầy"
+  }
+  function concatTwoArray(){
+    arrayC = arrayA.concat(arrayB);
+    result.innerHTML = `Mảng c có được sau khi nối a và b là ${arrayC}`;
+  }
+</script>
+</body>
+</html>

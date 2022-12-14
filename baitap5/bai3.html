@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="inp">
+<input onclick="themGiaTri()" type="button" value="NUT">
+<labael id="display"></labael>
+<p oninput="timSoLonNhat()" id="sln"></p>
+<p oninput="inGiTrTb()" id="tb"></p>
+
+
+
+<script>
+  let array=[];
+  let data;
+  function themGiaTri(){
+    data= +document.getElementById('inp').value;
+
+    array.push(data);
+    document.getElementById('display').innerHTML="mang:"+array+'<br>';
+
+    timSoLonNhat();
+    inGiTrTb();
+  }
+
+  function timSoLonNhat(){
+    let max=0;
+    for (let i=0;i<array.length;i++){
+      if (max<array[i]){
+        max=array[i];
+      }
+    }document.getElementById('sln').innerHTML="SoLonNhat"+max;
+  }
+  function inGiTrTb(){
+    let total=0;
+
+    for (let j=0;j<array.length;j++){
+      total=(total+array[j])/array.length;
+    }
+    document.getElementById('tb').innerHTML='gia tri trung binh'+total +'<br>';
+  }
+
+</script>
+</body>
+</html>

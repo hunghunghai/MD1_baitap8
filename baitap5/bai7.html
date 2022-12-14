@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mang = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    let number = +prompt('nhap so vao day')
+    let checkNumber = false
+    for(let i=0; i<mang.length; i++){
+        if(mang[i] === number) {
+            mang.splice(i,1)
+            checkNumber = true
+            break
+        }
+        else {
+            checkNumber=false
+        }
+
+    }
+    if(checkNumber){
+        document.write("Sau khi thực hiện ta còn : " + mang)
+    }
+    else {
+        document.write("Số không có trong mảng")
+    }
+
+
+</script>
+</body>
+</html>
