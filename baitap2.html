@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        th {
+            border: black 2px solid;
+            width: 20%;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+        }
+
+        td {
+            border: black 2px solid;
+            width: 20%;
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="timkiem" style="width: 20%; border: black 2px solid" >
+    <button onclick="Dichtu()">Tìm Kiếm</button><br>
+   <h1 id="kq"></h1>
+
+<script>
+    let j ="";
+    let listVie = ['Chồng', 'Vợ', 'Tôi'];
+    let listEng = ['husband', 'wife', 'me'];
+    function Dichtu() {
+        let userSearch = document.getElementById('timkiem').value;
+        for (let i = 0; i < listVie.length; i++) {
+            if (userSearch.toLowerCase()==listVie[i].toLowerCase()){
+                j=i;
+                document.getElementById('kq').innerHTML = listEng[j];
+                break;
+            }else {
+                document.getElementById('kq').innerHTML = 'Từ '+ userSearch +' Không có trong từ điển'
+            }
+        }
+    }
+</script>
+</body>
+</html>
